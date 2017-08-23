@@ -1,0 +1,23 @@
+public class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        
+        int size = nums.length;
+        int[] toRet = new int[2];
+        
+        for(int x = 0; x < size; x++){
+            
+            for(int y = 0; y < size; y++){
+                
+                if(x != y){
+                    if((nums[x] + nums[y]) == target){
+                        toRet[0] = x;
+                        toRet[1] = y;
+                        return toRet;
+                    }
+                }    
+            }
+        }
+        
+    return null;
+    }
+}
