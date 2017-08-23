@@ -1,0 +1,25 @@
+public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+     
+        
+        int l = s.length();
+        Set<Character> slide = new HashSet<>();
+        
+        int toRet = 0, x = 0, y = 0;
+        
+        while(x < l && y < l){
+            if(slide.contains(s.charAt(y)) == false){
+                slide.add(s.charAt(y));
+                y++;
+                if(y-x > toRet){toRet = y-x;}
+            }
+            else{
+                slide.remove(s.charAt(x));
+                x++;
+            }
+                
+        }
+        return toRet;
+        
+    }
+}
